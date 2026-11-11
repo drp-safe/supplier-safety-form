@@ -1,0 +1,5 @@
+.env
+*.dec.env
+/supplier-safety-form-backend
+/tmp
+*.test
