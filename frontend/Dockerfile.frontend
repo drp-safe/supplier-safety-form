@@ -1,0 +1,22 @@
+FROM node:20-alpine AS builder
+RUN apk upgrade --no-cache
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM node:20-alpine
+RUN apk upgrade --no-cache && npm install -g serve
+RUN addgroup -g 1001 -S appuser 2>/dev/null; adduser -u 1001 -S -G root appuser 2>/dev/null \
+    || useradd -r -u 1001 -g root appuser
+WORKDIR /app
+COPY --from=builder /app/build ./build
+COPY env.sh /app/env.sh
+RUN chmod +x /app/env.sh
+# env.sh writes build/env-config.js at container start → appuser needs write access.
+RUN chown -R appuser /app
+USER appuser
+EXPOSE 3000
+ENTRYPOINT ["/app/env.sh"]
+CMD ["serve", "-s", "build", "-l", "3000"]
