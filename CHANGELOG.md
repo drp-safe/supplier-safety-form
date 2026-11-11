@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/drp-safe/supplier-safety-form/compare/v1.0.1...v1.0.2) (2026-11-11)
+
+
+### Bug Fixes
+
+* check-sso bloqué par le cleanUrls de serve sur silent-check-sso.html ([74a3407](https://github.com/drp-safe/supplier-safety-form/commit/74a34072fbda71b12df321560821fd26b47dec5d))
+
 ## [1.0.1](https://github.com/drp-safe/supplier-safety-form/compare/v1.0.0...v1.0.1) (2026-11-11)
 
 
