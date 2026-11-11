@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/drp-safe/supplier-safety-form/compare/v1.0.0...v1.0.1) (2026-11-11)
+
+
+### Bug Fixes
+
+* update-manifests pointait vers ghcr.io/obeyler au lieu de drp-safe ([9a53c3a](https://github.com/drp-safe/supplier-safety-form/commit/9a53c3a9a6b6fdb0c37b4f4ce98b1d8c47bb46ee))
+
 # 1.0.0 (2026-11-11)
 
 
