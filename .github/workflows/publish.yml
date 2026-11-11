@@ -139,14 +139,14 @@ jobs:
         working-directory: k8s-repo/supplier-safety-form/dev
         run: |
           kustomize edit set image \
-            ghcr.io/obeyler/supplier-safety-form-backend=ghcr.io/obeyler/supplier-safety-form-backend:${{ needs.resolve.outputs.version }} \
-            ghcr.io/obeyler/supplier-safety-form-frontend=ghcr.io/obeyler/supplier-safety-form-frontend:${{ needs.resolve.outputs.version }}
+            ghcr.io/drp-safe/supplier-safety-form-backend=ghcr.io/drp-safe/supplier-safety-form-backend:${{ needs.resolve.outputs.version }} \
+            ghcr.io/drp-safe/supplier-safety-form-frontend=ghcr.io/drp-safe/supplier-safety-form-frontend:${{ needs.resolve.outputs.version }}
       - name: Mettre à jour les images — overlay prod
         working-directory: k8s-repo/supplier-safety-form/prod
         run: |
           kustomize edit set image \
-            ghcr.io/obeyler/supplier-safety-form-backend=ghcr.io/obeyler/supplier-safety-form-backend:${{ needs.resolve.outputs.version }} \
-            ghcr.io/obeyler/supplier-safety-form-frontend=ghcr.io/obeyler/supplier-safety-form-frontend:${{ needs.resolve.outputs.version }}
+            ghcr.io/drp-safe/supplier-safety-form-backend=ghcr.io/drp-safe/supplier-safety-form-backend:${{ needs.resolve.outputs.version }} \
+            ghcr.io/drp-safe/supplier-safety-form-frontend=ghcr.io/drp-safe/supplier-safety-form-frontend:${{ needs.resolve.outputs.version }}
       - name: Committer et pousser
         working-directory: k8s-repo
         run: |
